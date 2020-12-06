@@ -1,0 +1,77 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.body-wrapper {
+    height: 100%;
+    padding: 10px;
+}
+
+mat-toolbar {
+    background: blueviolet;
+}
+
+.sidebar {
+    height: calc(100vh - 80px);
+    overflow: auto;
+    box-shadow: 0 0 11px rgba(143, 164, 232, .08);
+}
+
+mat-drawer {
+    width: 220px;
+}
+
+.sidebar-user {
+    padding: 25px 10px;
+    box-shadow: 3px 2px 7px -1px rgba(127, 151, 249, .13);
+    position: relative;
+    text-align: center;
+    background: bisque;
+}
+
+.sidebar-user img {
+    box-shadow: 0 0 15px rgba(68, 102, 242, .3);
+}
+
+.sidebar-user h6 {
+    color: #ff8084;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 3px;
+}
+
+.sidebar-user p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.sidebar-menu .active {
+    background: darkgray;
+}
+
+.img-60 {
+    width: 60px!important;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+.sidebar-header {
+    font-size: 14px;
+    letter-spacing: .5px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #313131;
+}

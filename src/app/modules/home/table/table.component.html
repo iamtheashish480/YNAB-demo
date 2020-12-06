@@ -1,0 +1,62 @@
+<div class="general-padding">
+    <table>
+        <thead>
+            <tr>
+                <ng-container *ngIf=" showCheckBoxes">
+                    <th></th>
+                </ng-container>
+                <ng-container *ngIf=" showSerialNumber">
+                    <th>Sl. No.</th>
+                </ng-container>
+                <th *ngFor="let header of headers;let ind=index">
+                    {{header['name']}}
+                </th>
+                <ng-container *ngIf=" showViewPayeeOption">
+                    <th>Show Payee</th>
+                </ng-container>
+                <ng-container *ngIf=" showActionColumn">
+                    <th>Action</th>
+                </ng-container>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="data && data.length>0;">
+                <tr *ngFor=" let budget of data;let ind=index ">
+                    <ng-container *ngFor="let header of headers;let headerId=index;">
+
+                        <ng-container *ngIf="headerId==0 && showCheckBoxes">
+                            <td><input type="radio" (change)="showDetails(budget[ 'id'],ind,'radio')"></td>
+
+                        </ng-container>
+                        <ng-container *ngIf="headerId==0 && showSerialNumber">
+                            <td>{{ind+1}}.</td>
+
+                        </ng-container>
+                        <td>{{budget[header['ngModel']]}}</td>
+                        <!-- <td>{{budget['name']}}</td>
+                <td>{{getDate(budget['first_month']) | date: budget['date_format']['format'].toLowerCase()}}</td>
+                <td>{{getDate(budget['last_month']) | date: budget['date_format']['format'].toLowerCase()}}</td> -->
+                        <ng-container *ngIf="headerId==(headers.length-1) && showViewPayeeOption">
+                            <td (click)="showDetails(budget['id'],ind,'payee') ">
+                                <a>     View Payee</a>
+
+                            </td>
+                        </ng-container>
+                        <ng-container *ngIf="headerId==(headers.length-1) && showActionColumn">
+                            <td>
+                                <button mat-icon-button (click)="showDetails(budget['id'],ind,'info') ">
+                    <mat-icon>info</mat-icon>
+                  </button>
+                            </td>
+                        </ng-container>
+                    </ng-container>
+                </tr>
+            </ng-container>
+
+        </tbody>
+    </table>
+    <ng-container *ngIf="data && data.length==0;">
+
+        <div class="no-data">No {{tableId}} found.</div>
+    </ng-container>
+</div>

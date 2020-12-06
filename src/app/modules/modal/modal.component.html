@@ -1,0 +1,73 @@
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content" [ngClass]="{'height-60':id=='account'}">
+        <span class="close" (click)="closeModalComponent();">&times;</span>
+        <div>
+            <div class="general-padding page-header">{{id}} Details</div>
+            <ng-container *ngIf="id=='budget'">
+                <div>
+                    <div class="wrapper general-padding"><span>
+Budget Name:-</span>
+                        <strong>{{data['name']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding"><span>
+Updated On:</span>
+                        <strong>{{getDate(data['last_modified_on']) | date: data['date_format']['format'].toLowerCase()}}</strong>
+                    </div>
+                    <div class="wrapper general-padding"><span>
+First Month:</span>
+                        <strong>{{getDate(data['first_month']) | date: data['date_format']['format'].toLowerCase()}}</strong>
+                    </div>
+                    <div class="wrapper general-padding"><span>
+Last Month:</span>
+                        <strong>{{getDate(data['last_month']) | date: data['date_format']['format'].toLowerCase()}}</strong>
+                    </div>
+                    <div class="wrapper general-padding"><span>
+Currency Type:</span>
+                        <strong>{{data['currency_format']['iso_code']}}</strong>
+                    </div>
+                    <div>
+                        <app-table [showViewPayeeOption]="false" [data]="data['categories']" [showCheckBoxes]="false" [showSerialNumber]="true" [showActionColumn]="false" [headers]="categoryTableHeaders"></app-table>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="id=='account'">
+                <div>
+                    <div class="wrapper general-padding">
+                        <span>Name:-</span>
+                        <strong>{{data['name']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding">
+                        <span>type:-</span>
+                        <strong>{{data['type']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding">
+                        <span>on budget:-</span>
+                        <strong>{{data['on_budget']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding">
+                        <span>note:-</span>
+                        <strong>{{data['note']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding">
+                        <span>balance:-</span>
+                        <strong>{{data['balance']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding">
+                        <span>cleared balance:-</span>
+                        <strong>{{data['cleared_balance']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding">
+                        <span>uncleared balance:-</span>
+                        <strong>{{data['uncleared_balance']}}</strong>
+                    </div>
+                    <div class="wrapper general-padding">
+                        <span>transfer payee id:-</span>
+                        <strong>{{data['transfer_payee_id']}}</strong>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+</div>

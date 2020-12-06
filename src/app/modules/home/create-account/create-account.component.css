@@ -1,0 +1,35 @@
+.create-wrapper {
+    text-align: center;
+    padding: 40px;
+    height: 80%;
+    width: 80%;
+    margin: 0 10%;
+}
+
+.header {
+    padding: 10px 20px;
+    color: white;
+    background: dimgray;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+label {
+    float: left;
+    width: 40%;
+}
+
+input,
+select {
+    width: 40%;
+}
+
+button {
+    background-color: chartreuse;
+    font-size: 20px;
+    font-weight: 600;
+    width: 40%;
+    margin: 20px;
+}

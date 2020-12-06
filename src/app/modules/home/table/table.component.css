@@ -1,0 +1,37 @@
+/* table */
+
+table {
+    width: 100%;
+    text-align: center;
+    border: 1px solid;
+    position: relative;
+    overflow: scroll;
+}
+
+thead {
+    background: burlywood;
+}
+
+th {
+    text-transform: capitalize;
+}
+
+tr:nth-child(even) {
+    background: rgb(181, 216, 230)
+}
+
+td>>>mat-icon {
+    cursor: pointer;
+    color: blue;
+}
+
+.no-data {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+
+/* table */

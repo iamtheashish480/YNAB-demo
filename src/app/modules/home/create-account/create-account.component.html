@@ -1,0 +1,23 @@
+<div class="create-wrapper">
+    <span class="header">Create An Account</span>
+    <div>
+        <div class="general-padding">
+            <label>Name:</label>
+            <input [(ngModel)]="name" type="text">
+        </div>
+        <div class="general-padding">
+            <label>Account Type:</label> <select [(ngModel)]="accountType">
+        <option value="Checking">Checking</option>
+        <option value="Savings">Savings</option>
+        <option value="Cash">Cash</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Line Of Credit">Line Of Credit</option>
+        
+
+    </select></div>
+        <div class="general-padding">
+            <label>Balance:</label>
+            <input [(ngModel)]="balance" type="number">
+        </div>
+        <button (click)="createAccount()">Create Account</button></div>
+</div>
